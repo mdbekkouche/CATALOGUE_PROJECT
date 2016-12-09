@@ -16,11 +16,14 @@ public class TestMetier {
 		for (Produit p : prods) {
 			System.out.println(p.getDesignation());			
 		}
+		System.out.println("--------------------");
 		Produit p = metier.getProduit(1L);
 		System.out.println(p.getDesignation());
 		System.out.println(p.getPrix());
 		p.setPrix(11111);
 		metier.updateProduit(p);
+		System.out.println("--------------------");
+		metier.deleteProduit(1L);
 	}
 
 }
