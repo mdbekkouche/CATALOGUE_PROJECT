@@ -40,6 +40,7 @@ public class CatalogueMetierImpl implements ICatalogueMetier {
 	    session.beginTransaction();
 	    Object p = session.get(Produit.class, idProd);
 	    if (p == null) throw new RuntimeException("Produit introvable");
+	    session.getTransaction().commit();
 		return (Produit)p;
 	}
 
@@ -48,7 +49,7 @@ public class CatalogueMetierImpl implements ICatalogueMetier {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Query req = session.createQuery("select p from Produit p where p.designation like :x");
-		req.setParameter("x", "%"+mc+mc+"%");
+		req.setParameter("x", "%"+mc+"%");
 		List<Produit> prods = req.list();
 		session.getTransaction().commit();
 		return prods;
