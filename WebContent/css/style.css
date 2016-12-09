@@ -1,0 +1,21 @@
+div {
+	border: 1px dotted gray;
+	padding: 10px;
+	margin: 10px;
+}
+.cMonTableau1 {
+  width:400px;
+  border-collapse: separate;
+  border-spacing: 0px;
+  border: 1px solid blue;
+}
+.cMonTableau1 th{
+	border: 1px dotted gray;
+	padding: 10px;
+	background: pink;
+}
+.cMonTableau1 td{
+	border: 1px dotted gray;
+	padding: 10px;
+	background: white;
+}

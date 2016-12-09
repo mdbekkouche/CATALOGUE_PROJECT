@@ -3,11 +3,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Catalogue produits</title>
+<title>Catalogue des produits</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
  <div>
- <table>
+ <table class="cMonTableau1">
  
  	<tr>
  		<th>ID</th><th>DES</th><th>PRIX</th><th>QUANTITE</th>
