@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import metier.CatalogueMetierImpl;
 import metier.ICatalogueMetier;
+import metier.entities.Produit;
 
 /**
  * Servlet implementation class ControleurCatServlet
@@ -20,13 +21,7 @@ public class ControleurCatServlet extends HttpServlet {
     
 	private ICatalogueMetier metier;
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ControleurCatServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    
     
     @Override
     public void init() throws ServletException {
@@ -45,7 +40,15 @@ public class ControleurCatServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String action = request.getParameter("action");
+		if (action.equals("save")) {
+			String des = request.getParameter("designation");
+			double prix = Double.parseDouble(request.getParameter("prix"));
+			int qte = Integer.parseInt(request.getParameter("quantite"));
+			metier.addProduit(new Produit(des,prix,qte));			
+		}
+		request.setAttribute("produits", metier.listProduits());
+		request.getRequestDispatcher("/WEB-INF/vues/Produits.jsp").forward(request, response);	
 	}
 
 }

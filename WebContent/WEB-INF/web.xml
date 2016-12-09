@@ -4,7 +4,7 @@
   
   <servlet>
 	<servlet-name>cs</servlet-name>
-	<servlet-class>web.ControleurCatSetvlet</servlet-class>
+	<servlet-class>web.ControleurCatServlet</servlet-class>
   </servlet>
 	<servlet-mapping>
 		<servlet-name>cs</servlet-name>
