@@ -11,6 +11,23 @@
 		<url-pattern>*.php</url-pattern>
 	</servlet-mapping>
 	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>cs</web-resource-name>
+			<url-pattern>*.php</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	    <realm-name>Authentification</realm-name>
+	</login-config>
+	
 	<jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
